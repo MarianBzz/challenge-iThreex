@@ -1,4 +1,5 @@
 'use client';
+import { BookUser } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react';
 
@@ -6,23 +7,9 @@ const LayoutNavBar: React.FC<React.PropsWithChildren> = ({ children }) => {
   return (
     <div className='flex h-screen w-full flex-col'>
       <header className='sticky top-0 z-10 flex w-full items-center justify-between bg-red-500 p-4 text-white'>
-        <div className='flex items-center space-x-4'>
-          <button className='rounded-lg p-2 hover:bg-red-600'>
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              className='h-6 w-6'
-              fill='none'
-              viewBox='0 0 24 24'
-              stroke='currentColor'
-            >
-              <path
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                strokeWidth='2'
-                d='M4 6h16M4 12h16m-7 6h7'
-              />
-            </svg>
-          </button>
+        <div className='flex items-center gap-1'>
+          <BookUser size={30} />
+
           <h1 className='text-2xl font-bold'>EmplyNet</h1>
         </div>
         <div className='flex items-center space-x-4'>

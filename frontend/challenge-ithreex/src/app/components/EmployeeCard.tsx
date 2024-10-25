@@ -18,7 +18,7 @@ const EmployeeCard: React.FC<EmployeeCardProps> = ({
     <div className='h-fit flex-grow overflow-hidden rounded-md border drop-shadow-lg'>
       <div className='relative flex justify-center bg-slate-200'>
         <h2 className='text-center text-lg font-semibold'>{area}</h2>
-        <section className='absolute right-2 top-1 flex items-center gap-0.5 text-gray-500'>
+        <section className='absolute right-2 top-1 hidden items-center gap-0.5 text-gray-500 sm:visible sm:flex'>
           <p className='text-xs'>{employees.length}</p>
           <Users size={16} />
         </section>

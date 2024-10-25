@@ -5,8 +5,7 @@ import EmployeeList from './components/EmployeeList';
 const HomePage: React.FC = () => {
   return (
     <LayoutNavBar>
-      <EmployeeList></EmployeeList>
-      <div>hola gholadmaklsjdfn asd</div>
+      <EmployeeList />
     </LayoutNavBar>
   );
 };

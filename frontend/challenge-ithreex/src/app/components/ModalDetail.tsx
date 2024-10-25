@@ -10,7 +10,7 @@ interface ModalDetailProps {
 const ModalDetail: React.FC<ModalDetailProps> = ({ employee, closeModal }) => {
   return (
     <div className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50'>
-      <div className='relative flex max-h-[80%] w-full flex-col justify-start gap-4 rounded-xl bg-white p-6 shadow-lg sm:w-3/6'>
+      <div className='relative flex max-h-[80%] w-full flex-col justify-start gap-4 rounded-xl bg-white p-6 shadow-lg sm:w-2/6'>
         <button onClick={closeModal} className='absolute right-3 top-3'>
           <CircleX
             color='black'

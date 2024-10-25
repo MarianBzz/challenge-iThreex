@@ -33,7 +33,6 @@ const EmployeeItem: React.FC<EmployeeItemProps> = ({ employee, onClick }) => {
       {hovered && (
         <span className='absolute bottom-0 right-0 ml-auto flex h-full items-center gap-0.5 rounded-md bg-transparent pl-3 text-center text-xs text-blue-500 backdrop-blur-md'>
           Ver detalle
-          {/* <UserSearch size={14} /> */}
           <ChevronsRight size={15} />
         </span>
       )}

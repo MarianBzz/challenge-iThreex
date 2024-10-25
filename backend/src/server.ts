@@ -1,36 +1,30 @@
-import express, { Request, Response } from 'express';
-import { Pool } from 'pg';
+import express from 'express';
 import cors from 'cors';
+import { sequelize } from './models'; // Conexión a la DB
+import Employee from './models/Employee'; // Modelo de empleados
 
-// Configuración de Express
 const app = express();
 const port = 3001;
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
-// Configuración de la base de datos
-const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'postgres',
-  password: 'password',
-  port: 5434,
-});
-
-// Endpoint para obtener todos los empleados
-app.get('/api/empleados', async (req: Request, res: Response) => {
+// Ruta para obtener todos los empleados
+app.get('/api/employees', async (req, res) => {
   try {
-    const result = await pool.query('SELECT * FROM empleados');
-    res.json(result.rows);
-  } catch (err) {
-    console.error('Error al obtener empleados:', err);
-    res.status(500).json({ error: 'Error al obtener los empleados' });
+    const employees = await Employee.findAll(); // Traer todos los empleados
+    res.json(employees);
+  } catch (error) {
+    res.status(500).json({ message: 'Error al obtener empleados', error });
   }
 });
 
-// Levantar el servidor
-app.listen(port, () => {
-  console.log(`Servidor escuchando en http://localhost:${port}`);
+// Iniciar el servidor
+app.listen(port, async () => {
+  try {
+    await sequelize.sync(); // Sincroniza la base de datos
+    console.log(`Servidor escuchando en http://localhost:${port}`);
+  } catch (error) {
+    console.error('Error al conectar a la base de datos:', error);
+  }
 });

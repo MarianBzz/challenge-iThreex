@@ -24,6 +24,7 @@ Aplicación de gestión de empleados que permite organizar y visualizar informac
 
 Para el frontend:
 cd ../frontend
+cd challenge-ithreex
 npm install
 
 3. **Crear la base de datos en PostgreSQL:**:

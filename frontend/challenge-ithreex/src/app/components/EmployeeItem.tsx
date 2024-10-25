@@ -23,7 +23,7 @@ const EmployeeItem: React.FC<EmployeeItemProps> = ({ employee, onClick }) => {
     >
       {/* Contenedor para el nombre y su efecto de difuminado */}
       <h3
-        className={`text-base transition-opacity duration-200 ${
+        className={`text-base transition-opacity duration-100 ${
           hovered ? 'opacity-20' : 'opacity-100'
         }`}
       >

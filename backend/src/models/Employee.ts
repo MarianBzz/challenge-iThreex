@@ -14,7 +14,7 @@ const Empleado = sequelize.define('Employee', {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  antigüedad: {
+  antiguedad: {
     type: DataTypes.INTEGER,
     allowNull: false,
   },

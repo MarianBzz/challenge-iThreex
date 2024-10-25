@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { Employee } from '../types/employee';
 import EmployeeCard from './EmployeeCard';
+import EmployeeCardSkeleton from './EmployeeCardSkeleton';
 import ModalDetail from './ModalDetail';
 
 const EmployeeList: React.FC = () => {
@@ -40,7 +41,18 @@ const EmployeeList: React.FC = () => {
   }, []);
 
   if (loading) {
-    return <p>Cargando empleados...</p>;
+    return (
+      <div className='flex-1 rounded-lg bg-white p-2'>
+        <h1 className='mb-3 py-2 text-center text-lg font-bold text-gray-500'>
+          Listado de Empleados por Área
+        </h1>
+        <div className='flex flex-wrap gap-4 text-black'>
+          {Array.from({ length: 16 }).map((_, index) => (
+            <EmployeeCardSkeleton key={index} />
+          ))}
+        </div>
+      </div>
+    );
   }
 
   if (error) {
